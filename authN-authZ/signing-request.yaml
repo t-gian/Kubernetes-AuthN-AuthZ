@@ -1,0 +1,11 @@
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: frontend-csr
+spec:
+  groups:
+  - system:authenticated
+  request: # copy the b64 here !
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+  - client auth
